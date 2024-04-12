@@ -4,10 +4,13 @@ const loadPhone = async (searchText, isShowAll) => {
     const phones = data.data;
     // console.log(data.data);
     // console.log(searchText);
+    const noData = document.getElementById('no-data');
     if(phones.length === 0){
-        console.log('No Data Found');
-        const noData = document.getElementById('no-data');
+        console.log('No Data Found');    
         noData.classList.remove('hidden');
+    }
+    else{
+        noData.classList.add('hidden');
     }
     displayPhones(phones, isShowAll);
 }
